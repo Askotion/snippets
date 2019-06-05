@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if ping -c 1 116.203.5.186 &> /dev/null
+IP="1.1.1.1"
+
+if ping -c 1 $IP &> /dev/null
 then
   echo "Server Online!"
 else
