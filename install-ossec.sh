@@ -81,7 +81,7 @@ sleep 2
 
 
 progress 50 "Phase 4      "
-apt install -y wget unzip make gcc build-essential >> $LOG 2>&1
+apt install -y wget unzip make gcc build-essential libssl-dev >> $LOG 2>&1
 sleep 1
 
 
