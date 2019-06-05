@@ -3,12 +3,12 @@
 # Test if the user puts a Argument
 if [[ $# -eq 0 ]] ; then
     clear
-    echo 'You have to define a master IP!'
-    echo 'Usage: ./add-agent.sh <IP> '
+    echo 'You have to define a key!'
+    echo 'Usage: ./add-agent.sh <key> '
     exit 0
 fi
 
-IP=$1
+key=$1
 
 
 LOG=/root/setup.log
@@ -104,6 +104,6 @@ sudo apt install -y libpcre2-dev zlib1g-dev >> $LOG 2>&1
 wget https://raw.githubusercontent.com/Askotion/snippets/master/preloaded-vars.conf -P etc/ >> $LOG 2>&1
 sudo PCRE2_SYSTEM=yes ./install.sh >> $LOG 2>&1
 
-clear
 progress 100
+yes | /var/ossec/bin/manage_agents -i $key
 echo "Done!"
