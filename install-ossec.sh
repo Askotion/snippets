@@ -101,6 +101,7 @@ tar xzf pcre2-10.32.tar.gz -C src/external >> $LOG 2>&1
 
 progress 90
 sudo apt install -y libpcre2-dev zlib1g-dev >> $LOG 2>&1
+wget https://raw.githubusercontent.com/Askotion/snippets/master/preloaded-vars.conf -P etc/ >> $LOG 2>&1
 sudo PCRE2_SYSTEM=yes ./install.sh
 
 clear
