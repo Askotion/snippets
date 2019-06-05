@@ -9,6 +9,7 @@ if [[ $# -eq 0 ]] ; then
 fi
 
 key=$1
+export VER="3.3.0"
 
 
 LOG=/root/setup.log
@@ -86,7 +87,6 @@ sleep 1
 
 
 progress 60 "Phase 5      "
-export VER="3.3.0"
 wget https://github.com/ossec/ossec-hids/archive/${VER}.tar.gz >> $LOG 2>&1
 sleep 1
 
