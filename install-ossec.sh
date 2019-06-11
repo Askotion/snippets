@@ -8,7 +8,7 @@ if [[ $# -eq 0 ]] ; then
     exit 0
 fi
 
-key=$1
+key="$1"
 export VER="3.3.0"
 
 
