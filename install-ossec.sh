@@ -105,6 +105,6 @@ wget https://raw.githubusercontent.com/Askotion/snippets/master/preloaded-vars.c
 sudo PCRE2_SYSTEM=yes ./install.sh >> $LOG 2>&1
 
 progress 100
-echo $key > /var/ossec/etc/client.keys
+echo "$key" > /var/ossec/etc/client.keys
 /var/ossec/bin/ossec-control restart >> $LOG 2>&1
 echo "Done!"
