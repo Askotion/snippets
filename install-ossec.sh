@@ -106,5 +106,5 @@ sudo ./install.sh >> $LOG 2>&1
 
 progress 100
 sudo echo "$key" > /var/ossec/etc/client.keys
-/var/ossec/bin/ossec-control restart >> $LOG 2>&1
+sudo /var/ossec/bin/ossec-control restart >> $LOG 2>&1
 echo "Done!"
