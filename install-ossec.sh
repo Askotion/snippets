@@ -67,17 +67,17 @@ sleep 1
 
 
 progress 20 "Phase 2      "
-sudo apt -y upgrade >> $LOG 2>&1
+#sudo apt -y upgrade >> $LOG 2>&1
 sleep 1
 
 
 progress 30 "Phase 2      "
-sudo apt -y dist-upgrade >> $LOG 2>&1
+#sudo apt -y dist-upgrade >> $LOG 2>&1
 sleep 1
 
 
 progress 40 "Phase 3      "
-sudo apt -y autoremove >> $LOG 2>&1
+#sudo apt -y autoremove >> $LOG 2>&1
 sleep 2
 
 
