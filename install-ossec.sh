@@ -12,7 +12,7 @@ key="$1 $2 $3 $4"
 export VER="3.3.0"
 
 
-LOG=/root/setup.log
+LOG=~/setup.log
 
 clear
 
@@ -62,27 +62,27 @@ progress 10 "Initialize"
 
 progress 15 "Phase 1      "
 
-apt update >> $LOG 2>&1
+sudo apt update >> $LOG 2>&1
 sleep 1
 
 
 progress 20 "Phase 2      "
-apt -y upgrade >> $LOG 2>&1
+sudo apt -y upgrade >> $LOG 2>&1
 sleep 1
 
 
 progress 30 "Phase 2      "
-apt -y dist-upgrade >> $LOG 2>&1
+sudo apt -y dist-upgrade >> $LOG 2>&1
 sleep 1
 
 
 progress 40 "Phase 3      "
-apt -y autoremove >> $LOG 2>&1
+sudo apt -y autoremove >> $LOG 2>&1
 sleep 2
 
 
 progress 50 "Phase 4      "
-apt install -y wget unzip make gcc build-essential libssl-dev >> $LOG 2>&1
+sudo apt install -y wget unzip make gcc build-essential libssl-dev >> $LOG 2>&1
 sleep 1
 
 
@@ -105,6 +105,6 @@ wget https://raw.githubusercontent.com/Askotion/snippets/master/preloaded-vars.c
 sudo PCRE2_SYSTEM=yes ./install.sh >> $LOG 2>&1
 
 progress 100
-echo "$key" > /var/ossec/etc/client.keys
+sudo echo "$key" > /var/ossec/etc/client.keys
 /var/ossec/bin/ossec-control restart >> $LOG 2>&1
 echo "Done!"
