@@ -1,13 +1,18 @@
 #!/bin/bash
 
-IP="1.1.1.1"
+IP="116.203.82.111"
 
-if ping -c 1 $IP &> /dev/null
-then
-  echo "Server Online!"
-else
-  echo "Server was down.. reassigning floating-ip!"
-./hcloud floating-ip assign 74917 agent02
-  echo "done!"
-sleep 5
-fi
+
+
+while true; do
+        if ping -c 1 $IP &> /dev/null
+        then
+          echo "Server online!"
+        else
+          echo "Server was down.. reassigning floating-ip!"
+          hcloud floating-ip assign 84894 test2
+          sleep 10
+          echo "done!"
+        fi
+        sleep 1
+done
