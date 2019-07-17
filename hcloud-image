@@ -1,0 +1,9 @@
+FROM golang:1.11
+
+WORKDIR /go/src/app
+COPY . .
+
+RUN go get -u github.com/hetznercloud/cli/cmd/hcloud
+ENV HCLOUD_TOKEN=****************************************
+
+CMD ./entrypoint.sh
