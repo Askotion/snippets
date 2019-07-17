@@ -3,9 +3,9 @@ FROM golang:1.11
 WORKDIR /go/src/app
 COPY . .
 
-RUN chmod +x entrypoint.sh
 RUN go get -u github.com/hetznercloud/cli/cmd/hcloud
-ENV HCLOUD_TOKEN=****************************************
 
+RUN chmod +x ./entrypoint.sh
+RUN apt update && apt install -y fping && rm -rf /var/lib/apt/lists/*
 
 CMD ./entrypoint.sh
